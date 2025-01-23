@@ -37,3 +37,22 @@ ul {
 a {
   text-decoration: none;
 }
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  bottom: 37px !important;
+
+  .swiper-pagination-bullet {
+    background-color: var(--color-sixth);
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-highlight);
+  }
+}
