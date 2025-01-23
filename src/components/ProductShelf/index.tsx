@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation, Pagination} from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useProducts } from "../../hooks/useProducts";
 import { formattedCurrency } from "../../utils/formattedCurrency";
@@ -11,7 +11,7 @@ import { useCart } from "../../hooks/useCart";
 
 export const ProductShelf: React.FC = () => {
   const { products, isFetching } = useProducts();
-  const { handleAddToCart } = useCart()
+  const { handleAddToCart } = useCart();
   const totalStars = 5;
 
   return (
@@ -36,15 +36,15 @@ export const ProductShelf: React.FC = () => {
         breakpoints={{
           640: {
             slidesPerView: 2,
-            spaceBetween: 22
+            spaceBetween: 22,
           },
           980: {
             slidesPerView: 3,
-            spaceBetween: 22
+            spaceBetween: 22,
           },
           1300: {
             slidesPerView: 4,
-            spaceBetween: 99
+            spaceBetween: 99,
           },
         }}
       >
@@ -55,6 +55,10 @@ export const ProductShelf: React.FC = () => {
           products.map((product) => (
             <SwiperSlide key={product.productId}>
               <article className={styles.shelf__item}>
+                {product.listPrice && (
+                  <div className={styles.shelf__discount} />
+                )}
+
                 <img
                   src={product.imageUrl}
                   alt={product.productName}
@@ -121,16 +125,22 @@ export const ProductShelf: React.FC = () => {
                 <div className={styles.shelf__installments}>
                   {product.installments.length ? (
                     <span className={styles.shelf__installmentsValue}>
-                      ou em {product.installments[0].quantity}x de {formattedCurrency(product.installments[0].value / 100)}
+                      ou em {product.installments[0].quantity}x de{" "}
+                      {formattedCurrency(product.installments[0].value / 100)}
                     </span>
                   ) : (
                     ""
                   )}
                 </div>
 
-                <button className={styles.shelf__buttonBuy} onClick={() => {
-                  handleAddToCart(product.productId)
-                }}>Comprar</button>
+                <button
+                  className={styles.shelf__buttonBuy}
+                  onClick={() => {
+                    handleAddToCart(product.productId);
+                  }}
+                >
+                  Comprar
+                </button>
               </article>
             </SwiperSlide>
           ))

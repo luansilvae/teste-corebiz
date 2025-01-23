@@ -78,6 +78,16 @@
     }
   }
 
+  &__discount {
+    display: block;
+    height: 72px;
+    width: 82px;
+    background: url("/discount-badge.svg") no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   &__sellingPrice {
     height: 24px;
     text-align: center;
