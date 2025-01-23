@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+:root {
+  --color-fifth: #585858;
+  --color-bg-second: #FFFFFF;
+  --color-third: #333333;
+  --color-bg: #F2F2F2;
+  --color-highlight: #F8475F;
+  --color-second: #D7182A;
+  --color-sixth: #BDBDBD;
+  --color-first: #004B88;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-300: #7A7A7A;
+  --color-gray-200: #BFBFBF;
+  --color-gray-100: #C0C0C0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-second);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
