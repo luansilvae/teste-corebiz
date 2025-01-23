@@ -1,10 +1,12 @@
-import { render } from "react-dom"
-import './styles/global.scss'
+import { render } from "react-dom";
+import App from "./App";
+import { CartProvider } from "./contexts/CartContext";
 
-
-import App from "./App"
+import "./styles/global.scss";
 
 render(
-  <App />,
+  <CartProvider>
+    <App />
+  </CartProvider>,
   document.getElementById("root")
-)
+);

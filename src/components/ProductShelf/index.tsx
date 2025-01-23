@@ -7,9 +7,11 @@ import { formattedCurrency } from "../../utils/formattedCurrency";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import styles from "./product-shelf.module.scss";
+import { useCart } from "../../hooks/useCart";
 
 export const ProductShelf: React.FC = () => {
   const { products, isFetching } = useProducts();
+  const { handleAddToCart } = useCart()
   const totalStars = 5;
 
   return (
@@ -126,7 +128,9 @@ export const ProductShelf: React.FC = () => {
                   )}
                 </div>
 
-                <button className={styles.shelf__buttonBuy}>Comprar</button>
+                <button className={styles.shelf__buttonBuy} onClick={() => {
+                  handleAddToCart(product.productId)
+                }}>Comprar</button>
               </article>
             </SwiperSlide>
           ))

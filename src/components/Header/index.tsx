@@ -1,8 +1,15 @@
 import styles from "./header.module.scss";
 
 import LogoCorebiz from "../../assets/logo.svg";
+import { useCallback, useState } from "react";
+import { useCart } from "../../hooks/useCart";
+import { Cart } from "./Cart";
 
 const Header: React.FC = () => {
+  const [openCart, setOpenCart] = useState<boolean>(false)
+  const { amountProducts } = useCart()
+  const handleOpenCart = useCallback(() => setOpenCart(state => !state), [])
+
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
@@ -76,6 +83,7 @@ const Header: React.FC = () => {
 
             <li>
               <button
+                onClick={handleOpenCart}
                 className={styles.minicartButton}
                 aria-label="Abrir carrinho"
               >
@@ -95,9 +103,12 @@ const Header: React.FC = () => {
                 <span
                   className={styles.minicartButton__amount}
                 >
-                  2
+                  {amountProducts}
                 </span>
               </button>
+
+              <Cart openCart={openCart} />
+
             </li>
           </ul>
         </nav>
