@@ -16,6 +16,8 @@
   --color-first: #004B88;
   --color-black: #000000;
   --color-white: #FFFFFF;
+  --color-gray-500: #F2F2F2;
+  --color-gray-400: #E6E8EA;
   --color-gray-300: #7A7A7A;
   --color-gray-200: #BFBFBF;
   --color-gray-100: #C0C0C0;
@@ -55,4 +57,39 @@ a {
   .swiper-pagination-bullet-active {
     background-color: var(--color-highlight);
   }
+}
+
+.shelf {
+  .swiper-pagination {
+    @media(min-width: 769px) { 
+      display: none;
+    }
+
+    bottom: 0 !important;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    &::after {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000000;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none; 
+    }
+  }
+
 }
