@@ -1,5 +1,6 @@
-import { Fullbanner } from "./components/Fullbanner"
 import Header from "./components/Header"
+import { Fullbanner } from "./components/Fullbanner"
+import { Newsletter } from "./components/Newsletter"
 import { ProductShelf } from "./components/ProductShelf"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Fullbanner />
       <ProductShelf />
+      <Newsletter />
     </main>
   )
 }
