@@ -93,3 +93,10 @@ a {
   }
 
 }
+
+.Toastify {
+  .Toastify__progress-bar {
+    height: 3px;
+    background: var(--color-highlight);
+  }
+}

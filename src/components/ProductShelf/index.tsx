@@ -8,6 +8,7 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import styles from "./product-shelf.module.scss";
 import { useCart } from "../../hooks/useCart";
+import { notify } from "../../utils/notify";
 
 export const ProductShelf: React.FC = () => {
   const { products, isFetching } = useProducts();
@@ -137,6 +138,7 @@ export const ProductShelf: React.FC = () => {
                   className={styles.shelf__buttonBuy}
                   onClick={() => {
                     handleAddToCart(product.productId);
+                    notify("Produto adicionado ao carrinho");
                   }}
                 >
                   Comprar
