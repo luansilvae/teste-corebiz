@@ -23,7 +23,7 @@ export const Cart: React.FC<Props> = ({ openCart }) => {
           <ul className={styles.content__list}>
             {cart.map((cartProduct, index) => (
               <li key={index} className={styles.list__product}>
-                <img src={cartProduct.imageUrl} alt={cartProduct.productName} />
+                <img src={cartProduct.imageUrl} alt={cartProduct.productName} loading="lazy" />
                 <div className={styles.product__info}>
                   <h4>{cartProduct.productName}</h4>
 

@@ -45,11 +45,13 @@ export const Fullbanner: React.FC = () => {
           <SwiperSlide>
             <div className={styles.slider}>
               <img
+                loading="lazy"
                 src={banner.desktop}
                 className={`${styles["slider__image--desktop"]}`}
                 alt="Carousel image"
               />
               <img
+                loading="lazy"
                 src={banner.mobile}
                 className={`${styles["slider__image--mobile"]}`}
                 alt="Carousel image"

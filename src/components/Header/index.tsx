@@ -35,7 +35,7 @@ const Header: React.FC = () => {
 
         <div className={styles.logo}>
           <a href="/" aria-label="Corebiz">
-            <img src={LogoCorebiz} alt="Corebiz" />
+            <img src={LogoCorebiz} alt="Corebiz" loading="lazy"/>
           </a>
         </div>
 

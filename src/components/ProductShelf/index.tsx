@@ -1,8 +1,11 @@
+/* eslint-disable no-constant-condition */
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useProducts } from "../../hooks/useProducts";
 import { formattedCurrency } from "../../utils/formattedCurrency";
+
+import { LoadingShelf } from "./LoadingShelf";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -50,7 +53,13 @@ export const ProductShelf: React.FC = () => {
         }}
       >
         {isFetching ? (
-          <h2>carregando</h2>
+          <>
+          {[...Array(4)].map((_, index) => (
+            <SwiperSlide key={`skeleton-${index}`}>
+              <LoadingShelf />
+            </SwiperSlide>
+          ))}
+        </>
         ) : (
           products &&
           products.map((product) => (
@@ -64,6 +73,7 @@ export const ProductShelf: React.FC = () => {
                   src={product.imageUrl}
                   alt={product.productName}
                   className={styles.shelf__image}
+                  loading="lazy"
                 />
 
                 <h3 className={styles.shelf__productName}>
